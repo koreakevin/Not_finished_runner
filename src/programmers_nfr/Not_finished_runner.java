@@ -22,8 +22,13 @@ class Solution {
 
         // 완주 후 남아 있는 사람 출력
         System.out.println("완주 후 남은 명단: " + set);
+        
+       // 남은 선수가 완주하지 못한 선수
+        for (String p : set) {
+            return p; // 남아 있는 사람이 완주하지 못한 사람
+        }
 
-        return ""; // 임시 반환
+        return ""; // 예외처리
     }
 }
 

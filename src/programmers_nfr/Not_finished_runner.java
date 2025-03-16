@@ -1,32 +1,20 @@
 package programmers_nfr;
 
-import java.util.HashSet;
-import java.util.Set;
+// Set은 중복값 사용이 불가능해서 HashMap 사용하기
+import java.util.HashMap;
 
 class Solution {
     public String solution(String[] participant, String[] completion)  {
-        // 참가자를 저장
-        Set<String> set = new HashSet<>();
-
+        // 참가자를 저장할 HashMap 생성 (이름, 등장 욋수)
+       HashMap<String, Integer> map = new HashMap<>();
+       
+       // 참가자 추가 (동명이인 고려하여 개수 증가)
         for (String p : participant) {
-            set.add(p);
+            map.put(p,map.getOrDefault(p, 0) + 1);
         }
 
         // 저장된 참가자를 출력
-        System.out.println("참가자 명단: " + set);
-        
-        // 완주한 선수 제거
-        for (String c : completion) {
-            set.remove(c);
-        }
-
-        // 완주 후 남아 있는 사람 출력
-        System.out.println("완주 후 남은 명단: " + set);
-        
-       // 남은 선수가 완주하지 못한 선수
-        for (String p : set) {
-            return p; // 남아 있는 사람이 완주하지 못한 사람
-        }
+        System.out.println("참가자 명단: " + map);
 
         return ""; // 예외처리
     }

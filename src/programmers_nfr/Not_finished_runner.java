@@ -15,6 +15,13 @@ class Solution {
 
         // 저장된 참가자를 출력
         System.out.println("참가자 명단: " + map);
+        
+        // 완주한 선수 제거 (이름 등장 횟수 감소)
+        for (String c: completion) {
+        	map.put(c, map.get(c)-1);
+        }
+        // 완주 후 남아 있는 사람 출력 (값이 0이 아닌 사함 찾기)
+        System.out.println("완주 후 남아 있는 명단: " + map);
 
         return ""; // 예외처리
     }

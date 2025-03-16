@@ -14,6 +14,14 @@ class Solution {
 
         // 저장된 참가자를 출력
         System.out.println("참가자 명단: " + set);
+        
+        // 완주한 선수 제거
+        for (String c : completion) {
+            set.remove(c);
+        }
+
+        // 완주 후 남아 있는 사람 출력
+        System.out.println("완주 후 남은 명단: " + set);
 
         return ""; // 임시 반환
     }

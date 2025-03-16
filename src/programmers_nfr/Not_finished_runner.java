@@ -22,6 +22,13 @@ class Solution {
         }
         // 완주 후 남아 있는 사람 출력 (값이 0이 아닌 사함 찾기)
         System.out.println("완주 후 남아 있는 명단: " + map);
+        
+        // 남은 선수가 완주하지 못한 선수
+        for (String key : map.keySet()) {
+        	if (map.get(key) != 0) {
+        		return key;
+        	}
+        }
 
         return ""; // 예외처리
     }
